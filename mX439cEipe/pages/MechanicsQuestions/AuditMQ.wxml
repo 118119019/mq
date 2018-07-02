@@ -1,0 +1,38 @@
+<import src="MQdetail.wxml" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+    <view class="weui-cells">
+      <template is="mqItem" data="{{...MQ}}" />
+      <view class="weui-cells__title">题目审核：</view>
+      <view class="weui-cells weui-cells_after-title" style='color:blue;'>
+        <radio-group class="radio-group" bindchange="auditRadioChange">
+          <view class="weui-cell">
+            <label style="word-break: break-all;" for='auditRadioA'>
+              <radio id='auditRadioA' value="1" /> 同意发布
+            </label>
+          </view>
+          <view class="weui-cell">
+            <label style="word-break: break-all;" for='auditRadioB'>
+              <radio id='auditRadioB' value="-1" /> 不同意发布
+            </label>
+          </view>
+        </radio-group>
+      </view>
+      <view class='result' wx:if="{{opMqEnabl}}">
+        <button class="weui-btn  mini-btn mybtnsize" bindtap="opNextMq">下一题</button>
+      </view>
+      <view class='mybtnview'>
+      <button class="mini-btn mybtnsize" bindtap="opNextMq">跳过</button>
+        <button class="mini-btn mybtnsize" style="margin-left: 1em;" disabled="{{opMqEnabl}}" type="primary" bindtap="auditMq">提交</button>
+        <button class="mini-btn mybtnsize" style="margin-left: 1em;" bindtap="gomy">返回</button>
+      </view>
+      <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tips}}</view>
+    </view>
+      <view class="page__bd_spacing">
+      <view class="weui-footer" style='text-align:left;font-weight:bold'>
+        <view>提示： </view>
+        <view>非理工科题目，请选择“不同意发布”</view>       
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,16 @@
+ 
+.weui-form-preview{
+    margin-bottom: 25px;
+    text-align: center;
+}
+.mylabel {
+float:left;
+display: inline-flex;
+min-width:4em; 
+text-align:justify;
+text-align-last:justify;
+}
+.myimg{
+  display:inline-block;
+width:100%; 
+}

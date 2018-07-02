@@ -1,0 +1,51 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="toptitle">
+      服 务 商 列 表
+    </view>
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+        
+          <icon class="weui-icon-search_in-box" type="search"    size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}"
+           focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>   
+        </view>
+          <view class="weui-cells searchbar-result" wx:if="{{inputShowed}}">
+            <view class="weui-cell" bindtap="searchClickEvent" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">
+                    <view>{{inputVal}}</view>
+                </view>
+            </view>            
+        </view>
+      </view>
+    </view>
+    <view class="page__bd" wx:if="{{totalRecord == 0}}">
+        <view class="weui-loadmore">
+            <view class="weui-loading"></view>
+            <view class="weui-loadmore__tips">正在加载</view>
+        </view>        
+    </view>
+    <scroll-view scroll-y="true" style="height:{{scrollHeight}}px"
+      bindscrolltolower="scrollLowerEvent">
+      <view class="weui-panel weui-panel_access" wx:if="{{totalRecord > 0}}">      
+      <view class="weui-panel__bd">
+        <block wx:for="{{pageData}}">
+          <view class="weui-media-box weui-media-box_text" data-sid="{{item.Sid}}" bindtap="toDetailPage">           
+              <view class="weui-media-box__title weui-media-box__title_in-text">{{item.Name}}
+                <view class="z-highlight">
+                  {{item.Place}}
+                </view>
+              </view>
+              <view class="weui-media-box__desc">{{item.Introduction}}</view>            
+          </view>
+        </block>
+      </view>
+    </view>
+</scroll-view>   
+  </view>
+  
+</view>

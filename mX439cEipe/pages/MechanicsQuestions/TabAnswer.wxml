@@ -1,0 +1,13 @@
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title"></view>
+        <view class="page__desc"> </view>
+    </view>
+    <view class="page__bd page__bd_spacing">       
+          <view class="button-sp-area">
+            <button class="weui-btn" style='margin-bottom:25px;margin-top:25px;' type="primary" bindtap="answerMq"  >我来答题</button>
+            <button class="weui-btn" style='margin-bottom:25px;margin-top:25px;'  type="default" bindtap="auditMq" >我来审题</button>
+            <button class="weui-btn" style='margin-bottom:25px;margin-top:25px;'  type="warn" bindtap="addMq"  >我来出题</button>
+       </view>
+    </view>
+</view>

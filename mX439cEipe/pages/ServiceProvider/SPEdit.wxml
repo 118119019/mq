@@ -1,0 +1,103 @@
+<view class="page">
+  <view class="page__bd">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <view class="weui-cells" wx:if="{{sp}}">
+        <input type="hidden" name="Sid" value="{{sp.Sid}}" style="display:none;" />
+        <view class="weui-cells__title" style="padding-top:12px;">服务地点</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="Place" value="{{sp.Place}}"  placeholder="福建泉州丰泽" />
+            </view>
+            <view class="weui-cell__ft">
+              <icon type="warn" size="12" color="#E64340"></icon>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells__title">服务名</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="Name" value="{{sp.Name}}" placeholder="机械加个/3D打印/三维建模" />
+            </view>
+            <view class="weui-cell__ft">
+              <icon type="warn" size="12" color="#E64340"></icon>
+            </view>
+          </view>
+        </view>       
+        <view class="weui-cells__title">型号规格/服务简介</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" name="Introduction" value="{{sp.Introduction}}" placeholder="Fanuc31i" style="height: 3.3em" />
+            </view>
+          </view>
+        </view>      
+        <view class="weui-cells__title">费用说明</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" name="Cost" value="{{sp.Cost}}" placeholder="加工和材料费详谈+邮费自理" style="height: 3.3em" />
+            </view>
+            <view class="weui-cell__ft">
+              <icon type="warn" size="12" color="#E64340"></icon>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells__title">团队/公司名</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="Company" value="{{sp.Company}}" placeholder="自由飞翔有限公司" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells__title">联系人</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="Contacts" value="{{sp.Contacts}}" placeholder="小吴" />
+            </view>
+            <view class="weui-cell__ft">
+              <icon type="warn" size="12" color="#E64340"></icon>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells__title">电话</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="Tel" value="{{sp.Tel}}" placeholder="可不填" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells__title">微信</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="WeixinAccount" value="{{sp.WeixinAccount}}" placeholder="微信号(不是微信昵称)" />
+            </view>
+            <view class="weui-cell__ft">
+              <icon type="warn" size="12" color="#E64340"></icon>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells__title">备注</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" name="Remark" value="{{sp.Remark}}" placeholder="请输入其他信息" style="height: 3.3em" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-btn-area">
+          <button class="weui-btn" type="primary" formType="submit">保存</button>
+        </view>
+        <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{tips}}</view>
+      </view>
+
+    </form>
+
+
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<import src="../ServiceProvider/SPdetail.wxml"/>
+<view class="page" wx:if="{{hassp}}" >
+  <template is="spItem" data="{{...sp}}"/>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="bindSpEdit">编辑</button>   
+    </view>
+</view>
+<view class="page" wx:else>
+  <view class="page__hd" >
+    <view class="page__title">我的服务商信息</view>
+    <view class="page__desc">        
+        暂无
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cells__title">关联已有服务商信息,提交微信账号</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+          <view class="weui-label">微信账号</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" placeholder="请输入微信账号"  bindinput="inputTyping"  value="{{wxaccount}}" />
+        </view>
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="bindSp">关联</button>
+      <button class="weui-btn" type="default" bindtap="addSp">新建服务商</button>
+    </view>
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">微信账号未填写</view>
+  </view>
+</view>

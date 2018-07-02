@@ -1,0 +1,44 @@
+<view class="page"> 
+    <view class="weui-search-bar" >
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <view class="weui-cells searchbar-result" wx:if="{{inputShowed}}">
+          <view class="weui-cell" bindtap="searchClickEvent" hover-class="weui-cell_active">
+            <view class="weui-cell__bd">
+              <view>{{inputVal}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="page__bd" wx:if="{{totalRecord == 0}}">
+      <view class="weui-loadmore">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+    </view>
+    <view class="weui-panel weui-panel_access" wx:if="{{totalRecord > 0}}">
+        <view class="weui-form-preview">
+          <block wx:for="{{pageData}}">
+            <view data-id='{{item.Id}}' class="weui-form-preview__hd">
+              <view class="weui-form-preview__item">
+                <view class="labelleft">{{item.Title}}</view>
+              </view>
+              <view wx:if="{{item.Width!=480}}" class="weui-form-preview__item"  style="text-align: center;">
+                  <video style="width:{{item.Width}}px;height:{{item.Height}}px" src="{{item.VideoUrl}}" poster="{{item.PicUrl}}" objectFit="cover" controls>
+                </video>
+              </view>
+                <view wx:else>
+                <video style="width:100%;" src="{{item.VideoUrl}}" poster="{{item.PicUrl}}" objectFit="cover" controls>
+                </video> </view>
+            </view>
+          </block>
+        </view>
+     </view>  
+</view>

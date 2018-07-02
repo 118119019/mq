@@ -1,0 +1,80 @@
+<template name="spItem">
+  <view class="page__bd" >  
+    <view class="weui-cells">
+      <view class="weui-cells__title" style="padding-top:12px;" >服务地点</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Place}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">服务名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Name}}</text>
+          </view>
+        </view>
+      </view>     
+      <view class="weui-cells__title">型号规格/服务简介</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Introduction}}</text>
+          </view>
+        </view>
+      </view>    
+      <view class="weui-cells__title">费用说明</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Cost}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">团队/公司名</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Company}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">联系人</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Contacts}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">电话</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Tel}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">微信</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text style='width:70%;display: inline;float: left;' selectable="true" class="weui-label">{{WeixinAccount}}
+            </text>
+            <a  id='copytoClipboard' bindtap="tapCopytoClipboard" href='#' style='width: 30%;display: inline;float: left;color: red;'>复制</a>
+          </view>
+        </view>
+      </view>
+      <view class="weui-cells__title">备注</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <text selectable="true" class="weui-label">{{Remark}}</text>
+          </view>
+        </view>
+      </view>
+    </view>    
+  </view> 
+</template>

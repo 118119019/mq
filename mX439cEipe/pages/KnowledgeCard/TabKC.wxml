@@ -1,0 +1,32 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item" style='display:none;'>
+          <view class="mylabel"  >
+            <image class="userinfo-avatar" src="{{ avatarUrl}}"></image>
+          </view>
+          <view style='display:none;'  class="mylabel">{{ nickName}}
+            <navigator  url='HasReadKCards'  style='color:blue;display:inherit;float:right;margin-left:12em;'>已学习的</navigator>
+          </view>
+          <view class="mylabel">连续签到{{page.DayCount}}天,累积学习卡片{{page.HasReadCardCount}}张</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-cells">
+            <view class="weui-cell">
+              <view class="weui-uploader__bd">
+                <block class="weui-uploader__files" wx:for="{{page.CardUrls}}" wx:key="navItems" wx:for-item="item" wx:for-index="itemIdx">
+                  <view data-imgindex="{{itemIdx}}" class="weui-uploader__file weui-uploader__file_status" bindtap="previewImage">
+                    <image class="myimg" src="{{Domain + item}}" mode="aspectFill" /> </view>
+                </block>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-form-preview__ft">
+          <navigator bindtap="nextCards" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active">下一组</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

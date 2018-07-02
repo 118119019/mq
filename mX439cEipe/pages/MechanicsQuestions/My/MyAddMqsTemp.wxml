@@ -1,0 +1,28 @@
+<template name="myAddMqs">
+  <block wx:if="{{list.length>0}}">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__hd">{{list[0].MqStatuStr}}</view>
+      <view class="weui-panel__bd">
+        <block wx:for-items="{{list}}">
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text" data-mqstatu="{{item.MQStatu}}" data-mid="{{item.Mid}}" bindtap="toDetailPage">{{item.MqDesc}}
+            </view>
+            <block wx:if="{{item.MQStatu>0}}">
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">
+                  <button class="weui-btn mini-btn" data-mid="{{item.Mid}}"  data-desc="{{item.MqDesc}}" open-type="share" size="mini">分享</button>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+      <view class="weui-panel__ft">
+        <view class="weui-cell weui-cell_access weui-cell_link" data-mqstatu="{{list[0].MQStatu}}" bindtap="toLookMore">
+          <view class="weui-cell__bd">查看更多</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </view>
+      </view>
+    </view>
+  </block>
+</template>

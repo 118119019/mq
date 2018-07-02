@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">标题一</view>
+          <view class="weui-media-box__desc">
+            <video bindload="imageLoad" poster="https://puui.qpic.cn/vpic/0/a0649e9hxax_160_90_3.jpg/0" style="width: 100%;" src="https://vliveachy.tc.qq.com/vhot2.qqvideo.tc.qq.com/AfRnNrzpCw2cuMp6uIbPURk8_44hGyymZbnLq1JMHgWE/b0136et5ztz.m701.mp4?vkey=5C8E59356D6AD6025164BB22FA2AB0A3B5BC561FD8E0CD955792F003A5B057F8D83033FE6B73535969CF9B9EB0E3B7E428521EF39B100FB83A54BC721970434787B1EC0CCF906EAEF3CF9C7D2ED8A94C8B81A7B1D226CABF5BFBAA1B9CC8C8DF8BEAA4DF72B34D3C&ocid=657658796&ocid=732370348"
+              controls ></video>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+ 

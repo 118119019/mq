@@ -1,0 +1,20 @@
+.userinfo-avatar {
+  border-radius: 88rpx;
+  width: 88rpx;
+  height: 88rpx;
+} 
+.weui-form-preview{
+    margin-bottom: 25px;
+}
+.mylabel {
+float:left;
+display: inline-flex;
+min-width:4em; 
+text-align:justify;
+text-align-last:justify;
+}
+.myimg{
+  display:block;
+width:152px;
+height:152px;
+}

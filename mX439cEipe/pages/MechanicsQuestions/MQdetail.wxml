@@ -1,0 +1,52 @@
+<template name="mqItem">
+  <view wx:if="{{curOp!='audit'}}" style="padding-top:12px;padding-left:15px;padding-right:15px;">
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        出题人：{{nickName}}
+      </view>
+      <view class="weui-flex__item" style='text-align: right;'>
+        参与人数:{{AnswerCount}}
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells__title" style="padding-top:12px;">
+    题目描述
+    <block wx:if="{{curOp=='audit'}}">
+      <span style="color: blue;">（只允许理工科题目）</span>
+    </block>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+      <view class="weui-cell__bd" style="word-break: break-all;">
+        {{MqDesc}}
+      </view>
+    </view>
+    <view class="weui-cell">
+      <view class="weui-cell__bd">
+        <view class="weui-cell__ft">
+          <block wx:for="{{Imgs}}">
+            <view class="weui-uploader__file">
+              <image id='img{{index}}' data-imgindex="{{index}}" class="weui-uploader__img" bindtap="previewImage" mode='aspectFill' src="{{Domain + item}}"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <radio-group class="radio-group" bindchange="radioChange">
+      <block wx:for="{{MQContentList}}">
+        <view class="weui-cell">
+          <label style="word-break: break-all;" for='radio{{item.id}}'>
+            <block wx:if="{{curOp!='answer'}}">
+              <radio disabled='true' checked="{{item.id==Answer}}" id='radio{{item.id}}' value="{{item.id}}" /> {{item.id}}.{{item.content}}
+            </block>
+            <block wx:if="{{curOp=='answer'}}">
+              <radio id='radio{{item.id}}' value="{{item.id}}" /> {{item.id}}.{{item.content}}
+            </block>
+          </label>
+        </view>
+      </block>
+    </radio-group>
+  </view>
+</template>

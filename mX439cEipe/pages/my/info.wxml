@@ -1,0 +1,56 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_access" style='display:none;'>
+        <view class="weui-cell__bd">
+          <view style=" vertical-align: middle">我的极客币</view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_access" bindtap="showMyAnswerMq">
+        <view class="weui-cell__bd">
+          <view style="display: inline-block; vertical-align: middle">我答过的题</view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_access" bindtap="showMyMq">
+        <view class="weui-cell__bd">
+          <view style="display: inline-block; vertical-align: middle">我出的题目</view>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_access"  data-img='mfjxtz' bindtap="showQrCode">
+        <view class="weui-cell__bd">
+          <view style="display: inline-block; vertical-align: middle">免费机械图纸</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <view class="weui-cell weui-cell_access" data-img='jxjsjlq' bindtap="showQrCode">
+        <view class="weui-cell__bd">
+          <view style="display: inline-block; vertical-align: middle">机械技术交流群</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+
+      <view style='display: none; ' class="weui-cell weui-cell_access" bindtap="showMySp">
+        <view class="weui-cell__bd">
+          <view style=" vertical-align: middle">我的服务商信息</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <view style='display: none; ' class="weui-cell weui-cell_access" bindtap="showSpList">
+        <view class="weui-cell__bd">
+          <view style="vertical-align: middle">服务商列表</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <view class="weui-cell weui-cell_access" bindtap="showDisclaimer">
+        <view class="weui-cell__bd">
+          <view style="display: inline-block; vertical-align: middle">免责声明</view>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class="b1" hidden="{{flag}}" bindtap="hideAttent">
+  <image style="width:168px; height:168px; float:right;margin-right:25px;" src="../../image/attent.png"></image>
+</view>

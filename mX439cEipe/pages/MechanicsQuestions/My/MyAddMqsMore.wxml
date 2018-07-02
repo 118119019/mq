@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <view class="weui-cells searchbar-result" wx:if="{{inputShowed}}">
+        <view class="weui-cell" bindtap="searchClickEvent" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            <view>{{inputVal}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd" wx:if="{{loadingMore}}">
+    <view class="weui-loadmore">
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+  </view>
+  <scroll-view scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="scrollLowerEvent">
+    <view class="weui-panel weui-panel_access" wx:if="{{totalRecord > 0}}">
+      <view class="weui-panel__bd">
+        <block wx:for="{{pageData}}">
+          <view class="weui-media-box weui-media-box_text">
+            <view class="weui-media-box__title weui-media-box__title_in-text" data-mqstatu="{{item.MQStatu}}" data-mid="{{item.Mid}}" bindtap="toDetailPage">{{item.MqDesc}}
+              <view class="z-highlight">
+                {{item.MQContentsStr}}
+              </view>
+            </view>
+             <block wx:if="{{item.MQStatu>0}}">
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta">
+                  <button class="weui-btn mini-btn" data-mid="{{item.Mid}}"  data-desc="{{item.MqDesc}}" open-type="share" size="mini">分享</button>
+                 </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+  </scroll-view>
+</view>

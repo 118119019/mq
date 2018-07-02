@@ -1,0 +1,18 @@
+<import src="MQdetail.wxml" />
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+  <view class="page__bd">
+    <view class="weui-cells">
+      <template is="mqItem" data="{{...MQ}}" />     
+      <block wx:if="{{isShare}}">
+         <view class="weui-cells__tips">该题目已经答过或者本人出的
+         </view>  
+      </block>          
+       <view class='mybtnview'>
+        <button class="mini-btn mybtnsize"   bindtap="gomy">返回首页</button>
+        <block wx:if="{{MQ.MQStatu>0}}">
+         <button class="mini-btn mybtnsize" style='margin-left: 2em;' data-mid="{{MQ.Mid}}" type="warn"  data-desc="{{MQ.MqDesc}}" open-type="share">分享</button>   
+        </block> 
+      </view> 
+    </view>
+  </view>
+</view>
